@@ -1,37 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 11:00:06 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/29 11:21:15 by dde-sott         ###   ########.fr       */
+/*   Created: 2022/10/29 10:58:50 by dde-sott          #+#    #+#             */
+/*   Updated: 2022/10/29 15:43:48 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+/*size_t ft_strlen(const char *s)
 {
-	while (*s != '\0')
+    size_t i;
+
+    i = 0;
+    while (s[i] != '\0')
+        i++;
+    return (i);
+}*/
+
+char	*ft_strrchr(const char *s, int c)
+{
+    int len;
+
+    len = ft_strlen(s);
+	while (len > 0)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (s[len] == c)
+			return ((char *)s + len);
+		len--;
 	}
 	if (c == '\0')
 		return ((char *)s);
 	return (0);
 }
 
+#include <stdio.h>
 //Nao enviar
 int	main(void)
 {
 	char	*str = "Danielle.desotti";
-	char	*res = ft_strchr(str, 'n');
-
-	printf("%s", res);
+	char	*res = ft_strrchr(str, '.');
+    
+    if (res == NULL)
+        printf("Nao tem nada ai dentro");
+    else
+	    printf("%s", res);
 	return (0);
 }

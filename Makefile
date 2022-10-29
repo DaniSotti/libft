@@ -1,12 +1,25 @@
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
-OBJ = func
+#Name of the project
+NAME=libft
 
-all:
-	$(CC) $(CFLAGS) "colocar os nomes das funcoes" -o $(OBJ)
+#.c files
+C_SOURCE=$(wildcard *.c)
 
-clean:
-	rm -rf libft
-	rm -rf a.out
+#.h files Poderia usar o wildcard e buscar todos os ficheiros .h
+H_SOURCE=libft.h
 
-NAME, all, clean, fclean, re
+#Object files para transformar todos os ficheiros .c para .o?
+OBJ=$(C_SOURCE:.c=.o)
+
+#Compiler
+CC_FLAGS=-Wall\
+         -Werror\
+		 -Wextra
+
+all: $(NAME)
+	$(CC) $(CC_FLAGS) -o $(C_SOURCE) $(OBJ)
+
+#clean:
+#	rm -f $(NAME)
+#	rm -f $(OBJ) 
+
+#re: fcleanall
