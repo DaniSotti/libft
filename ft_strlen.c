@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:00:28 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/29 11:37:59 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/01 20:47:48 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ size_t ft_strlen(const char *s)
     return (i);
 }
 
-/*#include<stdio.h>
-int main()
-{
-    char s[] = "Danielle";
-    int len = ft_strlen(s);
-    printf("%d", len);
-    return (0);
-}*/

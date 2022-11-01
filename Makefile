@@ -1,25 +1,50 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/01 19:21:05 by dde-sott          #+#    #+#              #
+#    Updated: 2022/11/01 22:14:41 by dde-sott         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #Name of the project
-NAME=libft
+NAME = libft.a
 
 #.c files
-C_SOURCE=$(wildcard *.c)
+SOURCE = ft_strlen ft_isalnum ft_isalpha \
+           ft_isascii ft_isdigit ft_isprint \
+           ft_memcpy ft_memset ft_strlcpy \
+           ft_strlen ft_strlcat ft_strrchr
+
+#transformar os ficheiros em ficheiro .c
+C_SOURCE = $(SOURCE:%=%.c)
+
+#Já estou a transformar nos comando embaixo
+#O_FILES = $(SOURCE:.c=.o) 
 
 #.h files Poderia usar o wildcard e buscar todos os ficheiros .h
-H_SOURCE=libft.h
+#H_SOURCE = libft.h
 
 #Object files para transformar todos os ficheiros .c para .o?
-OBJ=$(C_SOURCE:.c=.o)
+O_FILES = $(C_SOURCE:.c=.o)
 
 #Compiler
-CC_FLAGS=-Wall\
-         -Werror\
-		 -Wextra
+CC = gcc
+CC_FLAGS = -Wall\
+           -Werror\
+           -Wextra
 
 all: $(NAME)
-	$(CC) $(CC_FLAGS) -o $(C_SOURCE) $(OBJ)
 
-#clean:
-#	rm -f $(NAME)
-#	rm -f $(OBJ) 
+$(NAME):
+	$(CC) $(CC_FLAGS) -c $(C_SOURCE) -I./
+	ar -rc $(NAME) $(O_FILES)
 
-#re: fcleanall
+clean:
+	rm -f $(O_FILES)
+fclean:
+	rm -f $(NAME)
+re: fclean $(NAME)

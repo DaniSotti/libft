@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:00:13 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/29 11:40:56 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/01 20:47:27 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[a] = '\0';
 	return (ft_strlen(dst) + ft_strlen(&src[b]));
 }
-
 //Nao enviar
+#include "libft.h"
 #include<stdio.h>
 int main()
 {
