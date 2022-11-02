@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:34:28 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/31 16:41:11 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/02 20:22:43 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
 
 int ft_isalnum(int car);
 int ft_isalpha(int c);
