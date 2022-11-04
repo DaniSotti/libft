@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:00:00 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/31 17:36:20 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:50:31 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void *ft_memset(void *b, int c, size_t len)
 
 
 //Nao enviar
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
@@ -39,4 +39,4 @@ int main()
     printf("\n");
 
     return (0);
-}
+}*/

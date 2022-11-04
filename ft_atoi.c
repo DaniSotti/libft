@@ -20,7 +20,7 @@ int ft_atoi(const char *str)
     return (result * sign);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
     char *str = "01234567";
@@ -29,4 +29,4 @@ int main()
     res = ft_atoi(str);
     printf("%d", res);
     return (0);
-}
+}*/

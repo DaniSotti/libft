@@ -1,4 +1,17 @@
 #include "libft.h"
+/*void *ft_memset(void *b, int c, size_t len)
+{
+    char    *d;
+
+    d = (char *)b;
+    while (len > 0)
+    {
+        d[len - 1] = c;
+        len--;
+    }
+    return (b);
+}*/
+
 void    *ft_calloc(size_t count, size_t size)
 {
     size_t  totalcount;
@@ -13,12 +26,16 @@ void    *ft_calloc(size_t count, size_t size)
     return (memall);
 }
 
-int main()
+/*int main()
 {
-    int *p;
-    p = (int *) calloc(5, sizeof(int));
+    //int *original;
+    int *mine;
+    //original = (int *) calloc(6, sizeof(int));
+    mine = (int *) ft_calloc(6, sizeof(int));
 
-    printf("%i", *p);
+    for (int i = 0; i < 6; i++)
+        //printf("%i", original[i]);
+        printf("%i", mine[i]);
 
     return (0);
-}
+}*/
