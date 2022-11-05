@@ -6,7 +6,7 @@
 #    By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 19:21:05 by dde-sott          #+#    #+#              #
-#    Updated: 2022/11/04 20:03:25 by dde-sott         ###   ########.fr        #
+#    Updated: 2022/11/05 13:14:32 by dde-sott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SOURCE = ft_strlen ft_isalnum ft_isalpha \
            ft_isascii ft_isdigit ft_isprint \
            ft_memcpy ft_memset ft_strlcpy \
            ft_strlen ft_strlcat ft_strrchr \
-           ft_atoi
+           ft_atoi ft_memmove
 
 #transformar os ficheiros em ficheiro .c
 C_SOURCE = $(SOURCE:%=%.c)

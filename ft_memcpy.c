@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:59:54 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/29 13:35:42 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/05 13:25:26 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     return (dest);
 }
 
-//não enviar
+/*//não enviar
 #include<stdio.h>
 int main()
 {
@@ -37,4 +37,4 @@ int main()
     printf("src: %s\n", src);
     printf("dest: %s\n", dest);
     return (0);
-}
+}*/
