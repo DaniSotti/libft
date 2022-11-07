@@ -6,36 +6,24 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:24:29 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/05 13:24:34 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 00:08:02 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*void *ft_memset(void *b, int c, size_t len)
+
+void	*ft_calloc(size_t count, size_t size)
 {
-    char    *d;
+	size_t	totalcount;
+	void	*memall;
 
-    d = (char *)b;
-    while (len > 0)
-    {
-        d[len - 1] = c;
-        len--;
-    }
-    return (b);
-}*/
-
-void    *ft_calloc(size_t count, size_t size)
-{
-    size_t  totalcount;
-    void    *memall;
-
-    totalcount = count * size;
-    memall = malloc(totalcount);
-    if (memall == NULL)
-        return (0);
-    else
-        ft_memset(memall, 0, totalcount);
-    return (memall);
+	totalcount = count * size;
+	memall = malloc(totalcount);
+	if (memall == NULL)
+		return (0);
+	else
+		ft_memset(memall, 0, totalcount);
+	return (memall);
 }
 
 /*int main()

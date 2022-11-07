@@ -6,20 +6,21 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:59:46 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/29 13:33:54 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 00:36:27 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_isprint(int car)
+
+int	ft_isprint(int car)
 {
-    if (car >= 32 && car <= 126)
-        return(1);
-    else
-        return(0);
+	if (car >= 32 && car <= 126)
+		return (1);
+	else
+		return (0);
 }
 
-//Nao enviar
+/*//Nao enviar
 #include<stdio.h>
 #include<ctype.h>
 int main()
@@ -31,4 +32,4 @@ int main()
     else
         printf("Is not printable");
     return(0);
-}
+}*/

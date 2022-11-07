@@ -6,19 +6,20 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:59:17 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/29 13:33:20 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 00:26:35 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
-int ft_isalpha(int c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-        return(1);
-    return(0);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
 }
 
-//Não enviar
+/*//Não enviar
 #include<ctype.h>
 #include<stdio.h>
 int main()
@@ -33,4 +34,4 @@ int main()
     else
         printf("Não é uma letra");
     return (0);
-}
+}*/
