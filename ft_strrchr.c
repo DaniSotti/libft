@@ -6,48 +6,35 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:58:50 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/31 16:39:19 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 23:12:53 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*size_t ft_strlen(const char *s)
-{
-    size_t i;
-
-    i = 0;
-    while (s[i] != '\0')
-        i++;
-    return (i);
-}*/
-
 char	*ft_strrchr(const char *s, int c)
 {
-    int len;
+	int	len;
 
-    len = ft_strlen(s);
-	while (len > 0)
+	len = ft_strlen(s);
+	if (c == '\0')
+		return ((char *)s + len);
+	while (len >= 0)
 	{
-		if (s[len] == c)
-			return ((char *)s + len);
+		if (s[len] == (char)c)
+			return ((char *)(s + len));
 		len--;
 	}
-	if (c == '\0')
-		return ((char *)s);
 	return (0);
 }
 
-#include <stdio.h>
-//Nao enviar
-int	main(void)
+/*int	main(void)
 {
-	char	*str = "Danielle.desotti";
-	char	*res = ft_strrchr(str, '.');
-    
-    if (res == NULL)
-        printf("Nao tem nada ai dentro");
-    else
-	    printf("%s", res);
+	char *src = "abbbbbbbb";
+    char *d1 = strrchr(src, 'a');
+    char *d2 = ft_strrchr(src, 'a');
+
+	printf("%s", d1);
+	printf("%s", d2);
 	return (0);
-}
+} */

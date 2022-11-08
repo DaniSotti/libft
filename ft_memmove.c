@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:25:37 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/07 00:58:05 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 22:42:38 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	len;
 
+	if (!dest && !src)
+		return (0);
 	if (src < dest)
 	{
 		len = n;

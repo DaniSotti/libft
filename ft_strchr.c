@@ -6,27 +6,26 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:00:06 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/29 11:21:15 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 23:17:37 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
 
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s);
 	return (0);
 }
 
-//Nao enviar
+/*//Nao enviar
 int	main(void)
 {
 	char	*str = "Danielle.desotti";
@@ -34,4 +33,4 @@ int	main(void)
 
 	printf("%s", res);
 	return (0);
-}
+}*/

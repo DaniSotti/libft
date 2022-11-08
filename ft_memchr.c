@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:24:47 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/07 00:43:47 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 23:53:58 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((char *)s + i);
 		i++;
 	}
-	if (c == '\0')
-		return ((char *)s);
 	return (0);
 }
 

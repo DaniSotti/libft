@@ -6,19 +6,20 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:00:44 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/29 11:21:43 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 22:17:25 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_toupper(int c)
+
+int	ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
-        c = c - 32;
-    return (c);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }
 
-//Não enviar
+/*//Não enviar
 
 #include <stdio.h>
 int main()
@@ -34,4 +35,4 @@ int main()
     }
     printf("%s", name);
     return(0);
-}
+}*/

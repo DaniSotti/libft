@@ -6,12 +6,13 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:00:19 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/10/31 18:23:58 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 21:56:26 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
@@ -31,7 +32,7 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (j);
 }
-// Nao enviar
+/*// Nao enviar
 #include<stdio.h>
 int main()
 {
@@ -42,4 +43,4 @@ int main()
     size_t b = ft_strlcpy(dst, src, n);
     printf("%zu\n%s\n",b, dst);
     return (0);
-}
+}*/

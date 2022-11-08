@@ -6,21 +6,13 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:00:13 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/01 20:47:27 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 21:54:03 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*size_t ft_strlen(const char *s)
-{
-	size_t i;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}*/
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	a;
 	size_t	b;
@@ -38,7 +30,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[a] = '\0';
 	return (ft_strlen(dst) + ft_strlen(&src[b]));
 }
-//Nao enviar
+/*//Nao enviar
 #include "libft.h"
 #include<stdio.h>
 int main()
@@ -49,4 +41,4 @@ int main()
 
 	printf("%s\n%ld", dst, res);
 	return (0);
-}
+}*/

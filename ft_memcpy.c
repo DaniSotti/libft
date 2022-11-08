@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:59:54 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/07 00:49:41 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/07 22:30:51 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	char_dest = (char *) dest;
 	char_src = (char *) src;
+	if (!char_dest && !char_src)
+		return (0);
 	i = 0;
 	while (i < n)
 	{

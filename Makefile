@@ -6,7 +6,7 @@
 #    By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 19:21:05 by dde-sott          #+#    #+#              #
-#    Updated: 2022/11/07 00:54:38 by dde-sott         ###   ########.fr        #
+#    Updated: 2022/11/07 23:03:48 by dde-sott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,9 @@ SOURCE = ft_strlen ft_isalnum ft_isalpha \
            ft_strlen ft_strlcat ft_strrchr \
            ft_atoi ft_memmove ft_bzero \
            ft_calloc ft_memchr ft_memcmp \
+           ft_strchr ft_strdup ft_strjoin \
+           ft_strncmp ft_substr ft_tolower \
+           ft_toupper
 
 #transformar os ficheiros em ficheiro .c
 C_SOURCE = $(SOURCE:%=%.c)
@@ -47,6 +50,6 @@ $(NAME):
 
 clean:
 	rm -f $(O_FILES)
-fclean:
+fclean: clean
 	rm -f $(NAME)
 re: fclean $(NAME)
