@@ -6,7 +6,7 @@
 #    By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 19:21:05 by dde-sott          #+#    #+#              #
-#    Updated: 2022/11/10 22:05:59 by dde-sott         ###   ########.fr        #
+#    Updated: 2022/11/11 21:52:32 by dde-sott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SOURCE = ft_strlen ft_isalnum ft_isalpha \
            ft_strncmp ft_substr ft_tolower \
            ft_toupper ft_putchar_fd ft_putstr_fd \
            ft_putendl_fd ft_putnbr_fd ft_strtrim \
+           ft_strnstr
 
 #transformar os ficheiros em ficheiro .c
 C_SOURCE = $(SOURCE:%=%.c)
