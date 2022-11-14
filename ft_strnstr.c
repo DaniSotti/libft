@@ -6,21 +6,21 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:26:19 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/11 21:51:06 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/14 20:56:14 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    size_t  i;
-    size_t  j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-    if (needle[0] == '\0')
-        return ((char *)haystack);
+	if (needle[0] == '\0')
+		return ((char *)haystack);
 	while (haystack[i] != '\0' && i < len)
 	{
 		if (haystack[i] == needle[j])
@@ -28,7 +28,7 @@ char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
 			while (haystack[i + j] == needle[j] && i + j < len)
 			{
 				if (needle[j + 1] == '\0')
-					 return ((char *)haystack + i);
+					return ((char *)haystack + i);
 				j++;
 			}
 			j = 0;
