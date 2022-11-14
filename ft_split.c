@@ -25,12 +25,12 @@ size_t	ft_strlen(const char *s)
 
 // funcoes da split
 
-int	*strcount(char const *s, char c)
+size_t	**strcount(char const *s, char c)
 {
 	size_t	len;
-	size_t	j;
+	size_t	old_i;
 	size_t	i;
-	char	*count;
+	int		*count;
 
 	len = ft_strlen(s); //para retornar o valor da string
 	i = 0;
@@ -39,19 +39,19 @@ int	*strcount(char const *s, char c)
 	{
 		while (i < len)
 		{
-			if (strchr(c, s[i]) == '\0')
+			if (ft_strchr(c, s[i]) == '\0')
 				break;
 			i++;
 		}
 
-		j = i;
+		old_i = i;
 		while (i < len)
 		{
-			if (strchr(c, s[i]) != '\0')
+			if (ft_strchr(c, s[i]) != '\0')
 				break;
 			i++;
 		}
-		if (i > j) 
+		if (i > old_i) 
 			*count = *count + 1;
 	}
 	return (count);
@@ -62,7 +62,7 @@ int main()
 	char	s[] = "To be, or not, to be.";
 	char	c[] = " ";
 
-	printf("%d", strcount(s, c));
+	printf("%ln", strcount(s, c));
 	return(0);
 }
 /*char	**ft_split(char const *s, char c)
