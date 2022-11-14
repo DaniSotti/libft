@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 22:07:35 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/12 19:20:21 by dde-sott         ###   ########.fr       */
+/*   Created: 2022/11/13 12:45:56 by dde-sott          #+#    #+#             */
+/*   Updated: 2022/11/13 13:43:51 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	j;
-	char	*sub;
+	char	*newstr;
+	int		i;
 
-	sub = malloc(sizeof(char)*(len + 1));
-	if (!sub || !s)
+	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!newstr)
 		return (0);
-	j = 0;
-	while (start < ft_strlen(s) && j < len)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		sub[j] = s[start];
-		j++;
-		start++;
+		newstr[i] = f(i, s[i]);
+		i++;
 	}
-	sub[j] = '\0';
-	return (sub);
+	newstr[i] = '\0';
+	return (newstr);
 }
-
-/*int main()
-{
-    char str[] = "danielle de sotti";
-    //char    start = 'de';
-
-    printf("%s", ft_substr(str, 3, 8));
-    return (0);
-}*/

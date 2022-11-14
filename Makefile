@@ -6,7 +6,7 @@
 #    By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 19:21:05 by dde-sott          #+#    #+#              #
-#    Updated: 2022/11/11 21:52:32 by dde-sott         ###   ########.fr        #
+#    Updated: 2022/11/13 19:47:42 by dde-sott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,17 +24,17 @@ SOURCE = ft_strlen ft_isalnum ft_isalpha \
            ft_strncmp ft_substr ft_tolower \
            ft_toupper ft_putchar_fd ft_putstr_fd \
            ft_putendl_fd ft_putnbr_fd ft_strtrim \
-           ft_strnstr
+           ft_strnstr ft_itoa ft_strmapi ft_striteri \
+
+BONUS = ft_lstnew
 
 #transformar os ficheiros em ficheiro .c
 C_SOURCE = $(SOURCE:%=%.c)
 
-#Já estou a transformar nos comando embaixo
-#O_FILES = $(SOURCE:.c=.o) 
-
-#.h files Poderia usar o wildcard e buscar todos os ficheiros .h
-#H_SOURCE = libft.h
-
+#buscar os ficheiro bonus .c
+C_BONUS = $(BONUS:%=%.c)
+#transforma os ficheiro bonus .c em .o
+O_BONUS = $(C_BONUS:.c=.o)
 #Object files para transformar todos os ficheiros .c para .o?
 O_FILES = $(C_SOURCE:.c=.o)
 
@@ -50,8 +50,13 @@ $(NAME):
 	$(CC) $(CC_FLAGS) -c $(C_SOURCE) -I./
 	ar -rc $(NAME) $(O_FILES)
 
+bonus:	$(C_BONUS)
+			$(CC) $(CC_FLAGS) -c $(C_BONUS) -I./
+			ar -rc $(NAME) $(O_BONUS)
+
 clean:
 	rm -f $(O_FILES)
+	rm -f $(O_BONUS)
 fclean: clean
 	rm -f $(NAME)
 re: fclean $(NAME)
