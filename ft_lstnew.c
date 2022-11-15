@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:19:31 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/14 21:14:20 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/15 23:28:29 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ t_list	*ft_lstnew(void *content)
 	t_list	*newnode;
 
 	newnode = (t_list *)malloc(sizeof(*newnode));
-
 	if (!newnode)
 		return (NULL);
 	newnode->content = content;

@@ -1,4 +1,4 @@
-#include "libft.h"
+/*#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -65,7 +65,7 @@ int main()
 	printf("%ln", strcount(s, c));
 	return(0);
 }
-/*char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	len;
 	size_t	j;
@@ -114,11 +114,11 @@ int main()
 			break ;
 		splistr[j] = s[i];
 		
-	}*/
+	}
 
 //Usar a função substring ou strchr (encontra a primeira posicao onde tem o palavra)
 //Strcpy?
-/*s: The string to be split.
+s: The string to be split.
 c: The delimiter character.
 The array of new strings resulting from the split.
 NULL if the allocation fails.

@@ -6,11 +6,11 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 12:46:57 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/12 16:38:56 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/15 23:29:50 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*#include "libft.h"
 
 int	ft_coutstrs(char *s, char c)
 {
@@ -72,4 +72,4 @@ int	main()
 
 	printf("%d", ft_coutstrs(str, c));
 	return (0);
-}
+} */

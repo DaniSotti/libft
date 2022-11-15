@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 17:04:04 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/15 23:31:08 by dde-sott         ###   ########.fr       */
+/*   Created: 2022/11/15 22:54:22 by dde-sott          #+#    #+#             */
+/*   Updated: 2022/11/15 23:15:19 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != '\0')
+	if (lst != NULL && del != NULL)
 	{
-		f(i, s + i);
-		i++;
+		del(lst->content);
+		free(lst);
+		lst = NULL;
 	}
 }
 
 /*
-s: The string on which to iterate.
-f: The function to apply to each character.
-
-Applies the function ’f’ on each character of
-the string passed as argument, passing its index
-as first argument. Each character is passed by
-address to ’f’ to be modified if necessary.
-*/
+lst: The node to free.
+del: The address of the function used to delete
+the content.
+Takes as a parameter a node and frees the memory of
+the node’s content using the function ’del’ given
+as a parameter and free the node. The memory of
+’next’ must not be freed. */

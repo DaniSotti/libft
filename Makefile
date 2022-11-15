@@ -6,7 +6,7 @@
 #    By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 19:21:05 by dde-sott          #+#    #+#              #
-#    Updated: 2022/11/14 21:16:02 by dde-sott         ###   ########.fr        #
+#    Updated: 2022/11/15 23:09:53 by dde-sott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SOURCE = ft_strlen ft_isalnum ft_isalpha \
            ft_putendl_fd ft_putnbr_fd ft_strtrim \
            ft_strnstr ft_itoa ft_strmapi ft_striteri \
 
-BONUS = ft_lstnew
+BONUS = ft_lstnew ft_lstadd_front ft_lstsize \
+        ft_lstlast ft_lstadd_back ft_lstdelone \
 
 #transformar os ficheiros em ficheiro .c
 C_SOURCE = $(SOURCE:%=%.c)

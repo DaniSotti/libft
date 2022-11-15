@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 17:04:04 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/15 23:31:08 by dde-sott         ###   ########.fr       */
+/*   Created: 2022/11/15 21:29:16 by dde-sott          #+#    #+#             */
+/*   Updated: 2022/11/15 22:50:51 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	unsigned int	i;
+	t_list	*temp;
 
-	i = 0;
-	while (s[i] != '\0')
+	if (new)
 	{
-		f(i, s + i);
-		i++;
+		if (!*lst)
+		{
+			*lst = new;
+			return ;
+		}
+		temp = ft_lstlast(*lst);
+		temp->next = new;
 	}
 }
 
 /*
-s: The string on which to iterate.
-f: The function to apply to each character.
-
-Applies the function ’f’ on each character of
-the string passed as argument, passing its index
-as first argument. Each character is passed by
-address to ’f’ to be modified if necessary.
+lst: The address of a pointer to the first link of
+a list.
+new: The address of a pointer to the node to be
+added to the list.
+Adds the node ’new’ at the end of the list.
 */

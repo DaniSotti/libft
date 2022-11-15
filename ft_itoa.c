@@ -1,9 +1,22 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/15 23:33:41 by dde-sott          #+#    #+#             */
+/*   Updated: 2022/11/15 23:34:30 by dde-sott         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 //Encontrar o tamanho do número (nova função)
-int	number_len(int	n)
+
+int	number_len(int n)
 {
 	unsigned int	len;
+
 	len = 0;
 	if (n == 0)
 		return (1);
