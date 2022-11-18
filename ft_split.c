@@ -1,128 +1,106 @@
-/*#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/12 12:46:57 by dde-sott          #+#    #+#             */
+/*   Updated: 2022/11/18 00:58:35 by dde-sott         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include "libft.h"
+
+int    ft_coutstrs(char const *s, char c)
 {
-	while (*s != '\0')
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	if ((char)c == '\0')
-		return ((char *)s);
-	return (0);
+    int    i;
+    int    count;
+
+    i = 0;
+    count = 0;
+    while (s[i] != '\0')
+    {
+        if (s[i] != c)
+        {
+            count++;
+            while (s[i] != c && s[i] != '\0')
+                i++;
+            if (s[i] == '\0')
+                return (count);
+        }
+        i++;
+    }
+    return (count);
 }
 
-size_t	ft_strlen(const char *s)
+int    word_len(char const *s, char c, int i)
 {
-	size_t	i;
+    int j;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+    j = 0;
+    while (s[i] != '\0' && s[i] != c)
+    {
+        i++;
+        j++;
+    }
+    return (j);
 }
 
-// funcoes da split
-
-size_t	**strcount(char const *s, char c)
+char    **ft_split(char const *s, char c)
 {
-	size_t	len;
-	size_t	old_i;
-	size_t	i;
-	int		*count;
+    char    **strsplit;
+    int        i;
+    int        j;
+    int        k;
 
-	len = ft_strlen(s); //para retornar o valor da string
-	i = 0;
-	count = 0;
-	while (i < len)
-	{
-		while (i < len)
-		{
-			if (ft_strchr(c, s[i]) == '\0')
-				break;
-			i++;
-		}
-
-		old_i = i;
-		while (i < len)
-		{
-			if (ft_strchr(c, s[i]) != '\0')
-				break;
-			i++;
-		}
-		if (i > old_i) 
-			*count = *count + 1;
-	}
-	return (count);
+    i = 0;
+    j = 0;
+    k = 0;
+    strsplit = (char**)malloc((ft_coutstrs(s, c) + 1) * sizeof(char *));
+    if (!strsplit)
+        return (0);
+    while(s[i] != '\0')
+    {
+        while (s[i] == c)
+            i++;
+        if (s[i])
+        {
+            strsplit[j] = (char *)malloc((word_len(s, c, i) + 1) * sizeof(char));
+            if (!strsplit[j])
+                return (0);
+            //while (j < ft_coutstrs(s, c))
+            //{
+                while(s[i] && s[i] != c)
+                {
+                    strsplit[j][k] = s[i];
+                    i++;
+                    k++;
+                }
+                strsplit[j][k] = '\0';
+                j++;
+            //}
+        }
+    }
+    strsplit[j] = NULL;
+    return (strsplit);
 }
 
-int main()
+int    main()
 {
-	char	s[] = "To be, or not, to be.";
-	char	c[] = " ";
+    char    **tab;
+    int        i;
+    char    c;
 
-	printf("%ln", strcount(s, c));
-	return(0);
+    c = ' ';
+
+    tab = ft_split("To be", c);
+
+    i = 0;
+    while (i <= 10)
+    {
+        printf("%s", tab[i]);
+        i++;
+    }
+    return (0);
 }
-char	**ft_split(char const *s, char c)
-{
-	size_t	len;
-	size_t	j;
-	int		*count;
-
-	len = ft_strlen(s); //para retornar o valor da string
-	i = 0;
-	count = 0;
-	while (i < len)
-	{
-		while (i < len)
-		{
-			if (strchr(c, s[i]) == '\0')
-				break;
-			i++;
-		}
-
-		j = i;
-		while (i < len)
-		{
-			if (strchr(c, s[i]) != '\0')
-				break;
-			i++;
-		}
-		if (i > j) *count = *count + 1;
-	}
-	
-	
-	
-	
-	size_t	i;
-	size_t	j;
-	char	*splistr;
-
-	i = 0;
-	len = ft_strlen(s);
-	while (i < len)
-	{
-		if (strchr(s[i], c) == '\0')
-			break ;
-		i++;
-	}
-	j = 0;
-	while (i < len)
-		if (ft_strchr(s[i], c) != '\0')
-			break ;
-		splistr[j] = s[i];
-		
-	}
-
-//Usar a função substring ou strchr (encontra a primeira posicao onde tem o palavra)
-//Strcpy?
-s: The string to be split.
-c: The delimiter character.
-The array of new strings resulting from the split.
-NULL if the allocation fails.
-Allocates (with malloc(3)) and returns an array
-of strings obtained by splitting ’s’ using the
-character ’c’ as a delimiter. The array must end
-with a NULL pointer. */
