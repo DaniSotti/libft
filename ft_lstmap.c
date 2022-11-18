@@ -6,29 +6,29 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 19:25:09 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/17 20:01:42 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/18 19:35:25 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list	*newlist;
-    t_list	*aux;
+	t_list	*newlist;
+	t_list	*aux;
 
 	if (!lst || !f || !del)
 		return (0);
 	newlist = NULL;
 	while (lst != NULL)
 	{
-		aux = ft_lstnew(f(lst->content));  //Cria um novo node 
+		aux = ft_lstnew(f(lst->content));
 		if (!aux)
 		{
-			ft_lstclear(&newlist, del); //deletamos 
+			ft_lstclear(&newlist, del);
 			return (0);
 		}
-		ft_lstadd_back(&newlist, aux); //e colocado os novos nodes no fim da lista
+		ft_lstadd_back(&newlist, aux);
 		lst = lst->next;
 	}
 	return (newlist);

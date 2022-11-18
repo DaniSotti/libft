@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 22:48:45 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/10 22:53:30 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/18 21:01:08 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
+	if (fd == -1)
+		return ;
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{

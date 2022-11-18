@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:33:02 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/09 20:40:19 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/18 20:50:06 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
-	if (fd >= 0)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		i = 0;
-		while (s[i] != '\0')
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
+		write(fd, &s[i], 1);
+		i++;
 	}
 }
 /*

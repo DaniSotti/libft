@@ -6,101 +6,107 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 12:46:57 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/18 00:58:35 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:55:07 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    ft_coutstrs(char const *s, char c)
+static int	ft_coutstrs(char const *s, char c)
 {
-    int    i;
-    int    count;
+	int	i;
+	int	count;
 
-    i = 0;
-    count = 0;
-    while (s[i] != '\0')
-    {
-        if (s[i] != c)
-        {
-            count++;
-            while (s[i] != c && s[i] != '\0')
-                i++;
-            if (s[i] == '\0')
-                return (count);
-        }
-        i++;
-    }
-    return (count);
+	i = 0;
+	count = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c)
+		{
+			count++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+			if (s[i] == '\0')
+				return (count);
+		}
+		i++;
+	}
+	return (count);
 }
 
-int    word_len(char const *s, char c, int i)
+static int	word_len(char const *s, char c, int i)
 {
-    int j;
+	int	j;
 
-    j = 0;
-    while (s[i] != '\0' && s[i] != c)
-    {
-        i++;
-        j++;
-    }
-    return (j);
+	j = 0;
+	while (s[i] != '\0' && s[i] != c)
+	{
+		i++;
+		j++;
+	}
+	return (j);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char    **strsplit;
-    int        i;
-    int        j;
-    int        k;
+	char	**strsplit;
+	int		i;
+	int		j;
+	int		k;
+	int		countstr;
 
-    i = 0;
-    j = 0;
-    k = 0;
-    strsplit = (char**)malloc((ft_coutstrs(s, c) + 1) * sizeof(char *));
-    if (!strsplit)
-        return (0);
-    while(s[i] != '\0')
-    {
-        while (s[i] == c)
-            i++;
-        if (s[i])
-        {
-            strsplit[j] = (char *)malloc((word_len(s, c, i) + 1) * sizeof(char));
-            if (!strsplit[j])
-                return (0);
-            //while (j < ft_coutstrs(s, c))
-            //{
-                while(s[i] && s[i] != c)
-                {
-                    strsplit[j][k] = s[i];
-                    i++;
-                    k++;
-                }
-                strsplit[j][k] = '\0';
-                j++;
-            //}
-        }
-    }
-    strsplit[j] = NULL;
-    return (strsplit);
+	countstr = ft_coutstrs(s, c);
+	i = 0;
+	j = 0;
+	strsplit = (char **)malloc((countstr + 1) * sizeof(char *));
+	if (!strsplit)
+		return (0);
+	while (s[i] != '\0')
+	{
+		while (j < countstr)
+		{
+			if (s[i] == c)
+			{
+				while (s[i] == c)
+					i++;
+			}
+			if (s[i] != c)
+			{
+				strsplit[j] = (char *)malloc((word_len(s, c, i) + 1));
+				if (!strsplit[j])
+					return (0);
+				k = 0;
+				while (s[i] && s[i] != c)
+				{
+					strsplit[j][k] = s[i];
+					i++;
+					k++;
+				}
+			}
+			strsplit[j][k] = '\0';
+			j++;
+		}
+		i++;
+	}
+	strsplit[j] = NULL;
+	return (strsplit);
 }
 
-int    main()
+/*int    main()
 {
-    char    **tab;
-    int        i;
-    char    c;
+	char    **tab;
+	int        i;
+	//char    c;
 
-    c = ' ';
+	//c = ' ';
 
-    tab = ft_split("To be", c);
+	tab = ft_split("hello!zzzzzzzz", 'z');
 
-    i = 0;
-    while (i <= 10)
-    {
-        printf("%s", tab[i]);
-        i++;
-    }
-    return (0);
-}
+	i = 0;
+	while (tab[i])
+	{
+		printf("%s", tab[i]);
+		i++;
+	}
+	return (0);
+}*/
