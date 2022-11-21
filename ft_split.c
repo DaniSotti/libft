@@ -6,11 +6,24 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 12:46:57 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/18 22:55:07 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/21 00:42:01 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*static void	ft_freeup(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		free(s);
+		i++;
+	}
+	free(s);
+}*/
 
 static int	ft_coutstrs(char const *s, char c)
 {
@@ -34,7 +47,7 @@ static int	ft_coutstrs(char const *s, char c)
 	return (count);
 }
 
-static int	word_len(char const *s, char c, int i)
+static int	word_len(char const *s, int i, char c)
 {
 	int	j;
 
@@ -47,46 +60,51 @@ static int	word_len(char const *s, char c, int i)
 	return (j);
 }
 
+static char	*ft_substrncpy(const char	*s, int pos, int len)
+{
+	char	*str;
+	int		i;
+
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (0);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = s[pos];
+		i++;
+		pos++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**strsplit;
 	int		i;
 	int		j;
-	int		k;
 	int		countstr;
 
-	countstr = ft_coutstrs(s, c);
 	i = 0;
 	j = 0;
-	strsplit = (char **)malloc((countstr + 1) * sizeof(char *));
+	countstr = ft_coutstrs(s, c);
+	strsplit = (char **)malloc(sizeof(char *) * (countstr + 1));
 	if (!strsplit)
 		return (0);
-	while (s[i] != '\0')
+	while (j < countstr)
 	{
-		while (j < countstr)
+		if (s[i] == c)
 		{
-			if (s[i] == c)
-			{
-				while (s[i] == c)
-					i++;
-			}
-			if (s[i] != c)
-			{
-				strsplit[j] = (char *)malloc((word_len(s, c, i) + 1));
-				if (!strsplit[j])
-					return (0);
-				k = 0;
-				while (s[i] && s[i] != c)
-				{
-					strsplit[j][k] = s[i];
-					i++;
-					k++;
-				}
-			}
-			strsplit[j][k] = '\0';
-			j++;
+			while (s[i] == c)
+				i++;
 		}
-		i++;
+		strsplit[j] = ft_substrncpy(s, i, word_len(s, i, c));
+		while (s[i] != c)
+			i++;
+		j++;
+		/*if (strsplit[j] == NULL)
+			ft_freeup(strsplit[j]);*/
 	}
 	strsplit[j] = NULL;
 	return (strsplit);
@@ -100,7 +118,7 @@ char	**ft_split(char const *s, char c)
 
 	//c = ' ';
 
-	tab = ft_split("hello!zzzzzzzz", 'z');
+	tab = ft_split("hello!zzzzzzzzdani", 'z');
 
 	i = 0;
 	while (tab[i])
