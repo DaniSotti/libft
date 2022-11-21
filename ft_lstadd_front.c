@@ -6,21 +6,21 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:19:25 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/15 20:19:35 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:26:40 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    if (new)
-    {
-        if (!lst)
-            *lst = new;
-        new->next = *lst;
-        *lst = new;
-    }
+	if (new)
+	{
+		if (!lst)
+			*lst = new;
+		new->next = *lst;
+		*lst = new;
+	}
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:27:28 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/15 23:31:58 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:24:29 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ int	ft_lstsize(t_list *lst)
 {
 	t_list	*temp;
 	int		i;
-    
-    temp = lst;
-    i = 0;
-    while (temp != NULL)
-    {
-        i++;
-        temp = temp->next;
-    }
+
+	temp = lst;
+	i = 0;
+	while (temp != NULL)
+	{
+		i++;
+		temp = temp->next;
+	}
 	return (i);
 }
 

@@ -6,12 +6,13 @@
 /*   By: dde-sott <dde-sott@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:35:57 by dde-sott          #+#    #+#             */
-/*   Updated: 2022/11/17 18:52:17 by dde-sott         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:32:41 by dde-sott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_lstclear(t_list **lst, void (*del)(void*))
+
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
 
